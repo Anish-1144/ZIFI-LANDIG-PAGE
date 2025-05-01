@@ -1,0 +1,50 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" rx="12" fill="#050510"/>
+  
+  <!-- Main Chart Section -->
+  <rect x="40" y="40" width="480" height="240" rx="8" fill="#1F1F3A"/>
+  
+  <!-- Chart Title -->
+  <rect x="60" y="60" width="200" height="20" rx="4" fill="#3B3B5C"/>
+  
+  <!-- Chart Axes -->
+  <line x1="80" y1="230" x2="460" y2="230" stroke="#3B3B5C" stroke-width="2"/>
+  <line x1="80" y1="100" x2="80" y2="230" stroke="#3B3B5C" stroke-width="2"/>
+  
+  <!-- Chart Data Bars -->
+  <rect x="120" y="150" width="30" height="80" rx="4" fill="#6366F1" opacity="0.8"/>
+  <rect x="180" y="180" width="30" height="50" rx="4" fill="#6366F1" opacity="0.8"/>
+  <rect x="240" y="130" width="30" height="100" rx="4" fill="#6366F1" opacity="0.8"/>
+  <rect x="300" y="110" width="30" height="120" rx="4" fill="#A855F7" opacity="0.9"/>
+  <rect x="360" y="160" width="30" height="70" rx="4" fill="#6366F1" opacity="0.8"/>
+  <rect x="420" y="190" width="30" height="40" rx="4" fill="#6366F1" opacity="0.8"/>
+  
+  <!-- Chart Legend -->
+  <rect x="60" y="250" width="15" height="15" rx="2" fill="#6366F1"/>
+  <rect x="150" y="250" width="15" height="15" rx="2" fill="#A855F7"/>
+  
+  <!-- Secondary Chart -->
+  <rect x="540" y="40" width="220" height="240" rx="8" fill="#1F1F3A"/>
+  
+  <!-- Pie Chart -->
+  <circle cx="650" cy="140" r="70" fill="#15152A"/>
+  <path d="M650 70A70 70 0 0 1 720 140L650 140Z" fill="#6366F1"/>
+  <path d="M650 140A70 70 0 0 1 615 205L650 140Z" fill="#A855F7"/>
+  <path d="M650 140A70 70 0 0 1 580 120L650 140Z" fill="#4CAF50" opacity="0.7"/>
+  <path d="M650 140A70 70 0 0 1 615 75L650 140Z" fill="#F44336" opacity="0.7"/>
+  
+  <!-- Data Table -->
+  <rect x="40" y="300" width="720" height="120" rx="8" fill="#1F1F3A"/>
+  
+  <!-- Table Header -->
+  <rect x="60" y="320" width="680" height="30" rx="4" fill="#3B3B5C"/>
+  
+  <!-- Table Rows -->
+  <rect x="60" y="360" width="680" height="20" rx="2" fill="#15152A"/>
+  <rect x="60" y="390" width="680" height="20" rx="2" fill="#15152A"/>
+  
+  <!-- Graph highlight annotation -->
+  <circle cx="300" cy="110" r="10" stroke="#A855F7" stroke-width="2" fill="none"/>
+  <line x1="310" y1="100" x2="350" y2="70" stroke="#A855F7" stroke-width="2"/>
+  <rect x="350" y="50" width="80" height="30" rx="15" fill="#A855F7" opacity="0.7"/>
+</svg> 

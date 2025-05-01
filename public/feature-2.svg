@@ -1,0 +1,48 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" rx="12" fill="#050510"/>
+  
+  <!-- Email Flow Chart -->
+  <rect x="100" y="100" width="200" height="80" rx="8" fill="#1F1F3A"/>
+  <rect x="120" y="120" width="160" height="20" rx="4" fill="#3B3B5C"/>
+  <rect x="120" y="150" width="120" height="10" rx="2" fill="#3B3B5C"/>
+  
+  <!-- Arrow -->
+  <path d="M300 140L350 140L350 100L400 150L350 200L350 160L300 160Z" fill="#6366F1"/>
+  
+  <!-- Split Path -->
+  <rect x="400" y="50" width="180" height="60" rx="8" fill="#1F1F3A"/>
+  <rect x="420" y="70" width="140" height="20" rx="4" fill="#3B3B5C"/>
+  
+  <rect x="400" y="200" width="180" height="60" rx="8" fill="#1F1F3A"/>
+  <rect x="420" y="220" width="140" height="20" rx="4" fill="#3B3B5C"/>
+  
+  <!-- Arrows from split -->
+  <path d="M490 110L490 130L470 130L500 160L530 130L510 130L510 110Z" fill="#6366F1"/>
+  <path d="M490 200L490 180L470 180L500 150L530 180L510 180L510 200Z" fill="#6366F1"/>
+  
+  <!-- Decision nodes -->
+  <rect x="400" y="120" width="180" height="60" rx="30" fill="#A855F7" opacity="0.7"/>
+  <rect x="440" y="140" width="100" height="20" rx="4" fill="#A855F7"/>
+  
+  <!-- Final nodes -->
+  <rect x="600" y="50" width="150" height="60" rx="8" fill="#1F1F3A"/>
+  <rect x="620" y="70" width="110" height="20" rx="4" fill="#3B3B5C"/>
+  
+  <rect x="600" y="200" width="150" height="60" rx="8" fill="#1F1F3A"/>
+  <rect x="620" y="220" width="110" height="20" rx="4" fill="#3B3B5C"/>
+  
+  <!-- Arrows to final nodes -->
+  <path d="M580 80L600 80" stroke="#6366F1" stroke-width="2"/>
+  <path d="M580 230L600 230" stroke="#6366F1" stroke-width="2"/>
+  
+  <!-- Flow Chart Caption -->
+  <rect x="100" y="340" width="600" height="40" rx="8" fill="#1F1F3A"/>
+  <rect x="120" y="350" width="560" height="20" rx="4" fill="#3B3B5C"/>
+  
+  <!-- Success Metrics -->
+  <circle cx="700" cy="80" r="20" fill="#4CAF50" opacity="0.7"/>
+  <path d="M690 80L700 90L710 70" stroke="white" stroke-width="2"/>
+  
+  <circle cx="700" cy="230" r="20" fill="#F44336" opacity="0.7"/>
+  <path d="M690 230L710 230" stroke="white" stroke-width="2"/>
+</svg> 
