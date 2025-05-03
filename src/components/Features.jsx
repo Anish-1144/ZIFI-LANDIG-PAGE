@@ -54,7 +54,7 @@ export default function ApolloSection() {
       >
         {/* Top text */}
         <div className="text-sm text-gray-600 mb-8">
-          JOIN OVER 500,000 BUSINESSES USING APOLLO
+          JOIN OVER 500,000 BUSINESSES USING ZIFIBOT
         </div>
 
         {/* Logos */}

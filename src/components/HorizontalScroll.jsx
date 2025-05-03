@@ -69,9 +69,9 @@ export default function HorizontalScroll() {
           </div>
           <div className="md:w-1/2 p-4">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XTasG3UYLvJsY7fJIKnGuto86D7Lkt.png"
+              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746258909/brave_screenshot_localhost_2_pb7gdp.png"
               alt="LinkedIn Prospecting Dashboard"
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full max-w-[700px] max-h-[600px] object-contain"
             />
           </div>
         </section>
@@ -97,9 +97,9 @@ export default function HorizontalScroll() {
           </div>
           <div className="md:w-1/2 p-4">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-F3q8WvlR0RzaT7qmEYiS4ExkaRMzlg.png"
+              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746258736/brave_screenshot_localhost_nm2yiu.png"
               alt="Social Media Automation Dashboard"
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full max-w-[700px] max-h-[600px] object-contain"
             />
           </div>
         </section>
@@ -126,9 +126,9 @@ export default function HorizontalScroll() {
           </div>
           <div className="md:w-1/2 p-4">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IOPjurl50QYeJgLaAlYqansKkPmgNA.png"
+              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746258815/brave_screenshot_localhost_1_ihhvaf.png"
               alt="AI-Powered Email Dashboard"
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full max-w-[700px] max-h-[600px] object-contain"
             />
           </div>
         </section>
@@ -139,7 +139,7 @@ export default function HorizontalScroll() {
             <h2 className="text-3xl md:text-5xl font-thin text-black mb-4">
               AI Solutions Built to Convert
             </h2>
-            <p className="text-lg mb-6        text-black">
+            <p className="text-lg mb-6 text-black">
               Leverage AI to analyze customer behavior, personalize outreach,
               and optimize your conversion funnel with data-driven insights.
             </p>
@@ -147,16 +147,16 @@ export default function HorizontalScroll() {
               <button className="bg-black text-white px-4 py-2 rounded-md">
                 Get started for free
               </button>
-              <button className="border border-black  text-black px-4 py-2 rounded-md">
+              <button className="border border-black text-black px-4 py-2 rounded-md">
                 Learn more
               </button>
             </div>
           </div>
           <div className="md:w-1/2 p-4">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7i8HRVbWEr2lE1WvRI1IcBQpfRhaU0.png"
+              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746258989/brave_screenshot_localhost_3_noxovm.png"
               alt="AI Solutions Dashboard"
-              className="rounded-xl shadow-lg w-full"
+              className="rounded-xl shadow-lg w-full max-w-[700px] max-h-[600px] object-contain"
             />
           </div>
         </section>

@@ -280,7 +280,8 @@ export default function TestimonialCarousel() {
             </p>
           </div>
           <div className="text-[200px] font-thin text-gray-800">
-            500K<span className="text-purple-900 text-[200px] font-thin">+</span>
+            500K
+            <span className="text-purple-900 text-[200px] font-thin">+</span>
           </div>
         </div>
 
@@ -348,7 +349,7 @@ export default function TestimonialCarousel() {
                 <div className="mb-4">
                   <div className="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mb-2">
                     <img
-                      src={`/api/placeholder/100/100`}
+                      src={`https://www.fotor.com/features/random-image-generator/`}
                       alt={testimonial.name}
                       className="w-full h-full object-cover"
                     />
