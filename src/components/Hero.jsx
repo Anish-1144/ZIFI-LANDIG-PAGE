@@ -74,7 +74,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
+      {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[1]">
         <div
           ref={circleRef}
           className="absolute w-[800px] h-[800px] -top-[200px] -right-[200px]"
@@ -83,7 +83,7 @@ const Hero = () => {
           <div className="absolute w-[70%] h-[70%] top-[15%] left-[15%] rounded-full bg-gradient-to-r from-purple-600/20 to-blue-800/5 blur-lg"></div>
         </div>
         <div className="absolute w-[600px] h-[600px] -bottom-[300px] -left-[200px] rounded-full bg-gradient-to-r from-purple-900/20 to-blue-700/5 blur-xl"></div>
-      </div>
+      </div> */}
 
       <div className="content-container relative z-10 container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-thin mb-6 tracking-tight text-white drop-shadow-lg">

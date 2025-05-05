@@ -50,7 +50,7 @@ function Navbar() {
           title: "Calling Agent",
           description: "AI agents for calls and lead conversion.",
           icon: "PhoneCall",
-          link: "/features/calling-agent",
+          link: "/calling-agent",
         },
         {
           title: "Social Media",

@@ -15,7 +15,9 @@
     "lenis": "^1.2.3",
     "lucide-react": "^0.503.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-fast-marquee": "^1.6.5",
+    "react-router-dom": "^7.5.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
