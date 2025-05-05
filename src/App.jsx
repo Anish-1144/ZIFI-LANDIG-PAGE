@@ -8,11 +8,6 @@ import HorizontalScroll from "./components/HorizontalScroll";
 import GrowthIQHero from "./components/GrowthIQHero";
 import Footer from "./components/Footer";
 import Nevbar from "./components/Nevbar";
-import CallAIComponent from "./components/CallAIComponent";
-import Scroll from "./components/scroll";
-import SpeakSmarter from "./components/SpeakSmarter";
-import BusinessSolution from "./components/BusinessSolution";
-import PricingPlans from "./components/PricingPlans";
 import CallingAgent from "./pages/CallingAgent";
 
 
