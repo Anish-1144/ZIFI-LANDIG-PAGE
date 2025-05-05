@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from '../components/Hero'
+
 import CallAIComponent from '../components/CallAIComponent'
-import Scroll from '../components/scroll'
+import Scroll from '../components/Scroll'
 import SpeakSmarter from '../components/SpeakSmarter'
 import BusinessSolution from '../components/BusinessSolution'
 import PricingPlans from '../components/PricingPlans'
