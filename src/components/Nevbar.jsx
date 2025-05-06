@@ -36,7 +36,6 @@ function Navbar() {
   };
 
   const navItems = [
-    // Your navItems array remains unchanged
     {
       name: "Features",
       dropdownItems: [
@@ -44,7 +43,7 @@ function Navbar() {
           title: "Email Marketing",
           description: "Automate targeted email campaigns.",
           icon: "Mail",
-          link: "/features/email-marketing",
+          link: "/email",
         },
         {
           title: "Calling Agent",
@@ -56,13 +55,7 @@ function Navbar() {
           title: "Social Media",
           description: "Manage and grow social presence.",
           icon: "Share2",
-          link: "/features/social-media",
-        },
-        {
-          title: "Lead Generation",
-          description: "Capture quality leads at scale.",
-          icon: "Users",
-          link: "/features/lead-generation",
+          link: "/socialmedia",
         },
       ],
       subLinks: [
@@ -90,230 +83,11 @@ function Navbar() {
     },
     {
       name: "Pricing",
-      dropdownItems: [
-        {
-          title: "Basic",
-          description: "Perfect for startups and small teams.",
-          icon: "CreditCard",
-          link: "/pricing/basic",
-        },
-        {
-          title: "Pro",
-          description: "Designed for growing businesses.",
-          icon: "CreditCard",
-          link: "/pricing/pro",
-        },
-        {
-          title: "Enterprise",
-          description: "Tailored for large organizations.",
-          icon: "CreditCard",
-          link: "/pricing/enterprise",
-        },
-      ],
-      subLinks: [
-        {
-          name: "Monthly",
-          link: "/pricing/monthly",
-          description: "Flexible month-to-month plans.",
-        },
-        {
-          name: "Annual",
-          link: "/pricing/annual",
-          description: "Discounted yearly plans.",
-        },
-        {
-          name: "Custom",
-          link: "/pricing/custom",
-          description: "Tailored pricing for your needs.",
-        },
-        {
-          name: "Comparison",
-          link: "/pricing/comparison",
-          description: "Compare all available plans.",
-        },
-      ],
+      link: "/pricing",
     },
     {
-      name: "About",
-      dropdownItems: [
-        {
-          title: "Our Story",
-          description: "Discover our journey.",
-          icon: "Building",
-          link: "/about/story",
-        },
-        {
-          title: "Team",
-          description: "Meet the experts.",
-          icon: "Users",
-          link: "/about/team",
-        },
-        {
-          title: "Careers",
-          description: "Join our team.",
-          icon: "Building",
-          link: "/about/careers",
-        },
-      ],
-      subLinks: [
-        {
-          name: "Mission",
-          link: "/about/mission",
-          description: "Learn about our core mission.",
-        },
-        {
-          name: "Values",
-          link: "/about/values",
-          description: "Discover our guiding principles.",
-        },
-        {
-          name: "Press",
-          link: "/about/press",
-          description: "Read our latest news.",
-        },
-        {
-          name: "Contact",
-          link: "/about/contact",
-          description: "Get in touch.",
-        },
-      ],
-    },
-    {
-      name: "Studies",
-      dropdownItems: [
-        {
-          title: "Case Studies",
-          description: "Success stories.",
-          icon: "BookOpen",
-          link: "/studies/cases",
-        },
-        {
-          title: "Research",
-          description: "Industry insights.",
-          icon: "BookOpen",
-          link: "/studies/research",
-        },
-        {
-          title: "White Papers",
-          description: "In-depth analyses.",
-          icon: "BookOpen",
-          link: "/studies/white-papers",
-        },
-      ],
-      subLinks: [
-        {
-          name: "Success",
-          link: "/studies/success",
-          description: "Client success outcomes.",
-        },
-        {
-          name: "Reports",
-          link: "/studies/reports",
-          description: "Key industry reports.",
-        },
-        {
-          name: "Benchmarks",
-          link: "/studies/benchmarks",
-          description: "Performance metrics.",
-        },
-        {
-          name: "Data Sheets",
-          link: "/studies/data-sheets",
-          description: "Detailed metrics.",
-        },
-      ],
-    },
-    {
-      name: "CRM",
-      dropdownItems: [
-        {
-          title: "CRM Enrichment",
-          description: "Enhance CRM data.",
-          icon: "Database",
-          link: "/crm/enrichment",
-        },
-        {
-          title: "Waterfall",
-          description: "Progressive data.",
-          icon: "Database",
-          link: "/crm/waterfall",
-        },
-        {
-          title: "CSV",
-          description: "Manage large datasets.",
-          icon: "Database",
-          link: "/crm/csv",
-        },
-        {
-          title: "API",
-          description: "Automate workflows.",
-          icon: "Database",
-          link: "/crm/api",
-        },
-      ],
-      subLinks: [
-        {
-          name: "Salesforce",
-          link: "/crm/salesforce",
-          description: "Enhance Salesforce.",
-        },
-        {
-          name: "HubSpot",
-          link: "/crm/hubspot",
-          description: "Power up HubSpot.",
-        },
-        {
-          name: "Custom",
-          link: "/crm/custom",
-          description: "Custom CRM connections.",
-        },
-        { name: "Scanner", link: "/crm/scanner", description: "Fix CRM data." },
-      ],
-    },
-    {
-      name: "Personalize",
-      dropdownItems: [
-        {
-          title: "Apollo Platform",
-          description: "Comprehensive sales solution.",
-          icon: "Layers",
-          link: "/personalize/apollo",
-        },
-        {
-          title: "Data Network",
-          description: "Dynamic data for campaigns.",
-          icon: "Database",
-          link: "/personalize/data-network",
-        },
-        {
-          title: "Apollo AI",
-          description: "Intelligent automation with AI. ",
-          icon: "Layers",
-          link: "/personalize/ai",
-        },
-      ],
-      subLinks: [
-        {
-          name: "Integrations",
-          link: "/personalize/integrations",
-          description: "Connect tools.",
-        },
-        {
-          name: "Extension",
-          link: "/personalize/extension",
-          description: "Browser personalization.",
-        },
-        {
-          name: "Automation",
-          link: "/personalize/automation",
-          description: "Automate tasks.",
-        },
-        {
-          name: "Reports",
-          link: "/personalize/reports",
-          description: "Review results.",
-        },
-      ],
+      name: "Contact Us",
+      link: "/contact",
     },
   ];
 
@@ -362,13 +136,13 @@ function Navbar() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <a
-                      href={`#${item.name.toLowerCase()}`}
+                      href={item.link || `#${item.name.toLowerCase()}`}
                       className="text-md font-medium text-white hover:text-gray-300 transition-colors"
                     >
                       {item.name}
                     </a>
 
-                    {hoveredItem === item.name && (
+                    {hoveredItem === item.name && item.dropdownItems && (
                       <motion.div
                         className={`absolute left-0 z-50 mt-3 bg-white rounded-xl shadow-lg py-8 flex border border-gray-100 ${
                           item.dropdownItems.length === 3

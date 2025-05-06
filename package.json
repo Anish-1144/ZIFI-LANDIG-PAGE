@@ -17,6 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
+    "react-icon-cloud": "^4.1.7",
     "react-router-dom": "^7.5.3"
   },
   "devDependencies": {
