@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, User, Building } from "lucide-react";
 import gsap from "gsap";
 
-// Dummy testimonial data
+// Testimonial data with company logos and profile images
 const testimonials = [
   {
     category: "SALES LEADERS",
     name: "Nicole Coetzer",
     title: "Head of Sales Development",
     company: "Kinsta",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/hE2dPkdYiEEWpn3HBMIyM5yoe070qoOyjjkDSbFipPk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE1/MjcyMjM0MS9waG90/by9wcm91ZC1ob21l/LW93bmVyLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1pSGlm/Sm1vdEU1VE04UUxo/WXAxdWpSTmYxN3Fa/UGo2WXZCYjFXV3h0/TTE0PQ",
+    
     years: 5,
   },
   {
@@ -17,7 +19,9 @@ const testimonials = [
     name: "Diego Cobian",
     title: "Enterprise Account Executive",
     company: "Amobee",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/PER3dhnzikOIuUNdf0IsJKF4ouLCTE_r4QnU1lUenDI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQw/OTk0ODQ4OC9waG90/by9idXNpbmVzcy1w/b3J0cmFpdC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9c2Nt/ZUhyaEZmX3J3Q0JU/SXYwb2o3ZXVEbmI5/TzQtMU9rNElVOXBM/ZmJDVT0",
+   
     years: 3,
   },
   {
@@ -25,7 +29,9 @@ const testimonials = [
     name: "Andrew Froning",
     title: "SDR Leader",
     company: "Cyera",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/ZGjwp1rJd-rUeQjLizlgSOIHLLbykaH2n6-haFBBkM0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA2/OTY3Mzg3MC9waG90/by95b3VuZy1tYWxl/LWNvbGxlZ2Utc3R1/ZGVudC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9WUlfSHlB/cUVnUnhpcXdxN0VZ/TU11eHdoSFJkZU1m/R2k0OU5lLXU5M0tM/WT0",
+    
     years: 2,
   },
   {
@@ -33,7 +39,9 @@ const testimonials = [
     name: "Mark Turner",
     title: "VP of Revenue Operations",
     company: "Built",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/-nmVZDdmB7_ikR8JDC0HbOGRf3KQSrGy0eQCWVo4av0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE3/NTkzODE2Mi9waG90/by9waXp6ZXJpYS1v/d25lci1zbWlsaW5n/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1WdlBiWElwajg2/X0pWQ1p2VlJsRXJn/N0FqMnhpM3VieVY4/S1E3RnBHNXdZPQ",
+   
     years: 6,
   },
   {
@@ -41,7 +49,9 @@ const testimonials = [
     name: "Sarah Johnson",
     title: "Head of Digital Marketing",
     company: "TechFlow",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/rfoVI-N4nYfq5StycSKfIiRGbQU_2QnGBZ9QgB91unA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE1/ODA4MjU3Ny9waG90/by9wb3J0cmFpdC1v/Zi1hLWxhdGluby12/ZXRlcmFuLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1fOEdO/aUttRFdYWlVTbE5R/VmVvbWRfVjVncVhY/NUw3OHdmWVRtM20y/U1EwPQ",
+   
     years: 4,
   },
   {
@@ -49,7 +59,9 @@ const testimonials = [
     name: "Michael Chen",
     title: "Customer Success Manager",
     company: "CloudWave",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/Nh-P01lpr209Xo0qtAJEEXCZyYw1GI_XOeaJOP_ycrM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE0/Njk2MjkyNy9waG90/by9zZW5pb3ItY2F1/Y2FzaWFuLW1hbi1w/b3J0cmFpdC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9UDI3/cXlfbFJOT0s5eGtK/OUdoa002U2J4ZkJJ/V3pHYlphUnpGOWhp/OG5zND0",
+  
     years: 3,
   },
   {
@@ -57,7 +69,9 @@ const testimonials = [
     name: "Emily Rodriguez",
     title: "Product Manager",
     company: "Nexos",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/ncU58rr6QqiipUIQjWINIoZAZVHXmAflRaCXb5G-kNM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE4/ODk2NjM3NC9waG90/by9wb3J0cmFpdC1v/Zi1hLWhhcHB5LW1l/eGljYW4tYnVzaW5l/c3N3b21hbi5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9em1J/VXRHUWk1dzJFMlBw/bEo3WXhMa0RnZS1j/WDVNZHF2REZnNl9i/cVo0VT0",
+    
     years: 4,
   },
   {
@@ -65,7 +79,9 @@ const testimonials = [
     name: "David Kim",
     title: "Lead Developer",
     company: "Synapt",
-    companyLogo: "/api/placeholder/100/30",
+    profileImage:
+      "https://imgs.search.brave.com/8hxlnbXZHu8vRSJd2_UlYamYQAI51RF52sDsanK-cGU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/NTM4MTEyMC9waG90/by9wb3J0cmFpdC1v/Zi1hLXlvdW5nLXdv/bWFuLW91dGRvb3Jz/LXNtaWxpbmcuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPVQ1/ZHVrUEQxci1vMEJG/cWVxbElhcDd4encw/N2ljdWNldHdLYUVD/Mk1zNU09",
+   
     years: 7,
   },
 ];
@@ -265,6 +281,14 @@ export default function TestimonialCarousel() {
     }
   }, [currentPage, direction]);
 
+  // Function to get initials from name
+  const getInitials = (name) => {
+    return name
+      .split(" ")
+      .map((part) => part[0])
+      .join("");
+  };
+
   return (
     <div className="p-8">
       <div className="bg-white p-5 rounded-xl">
@@ -308,12 +332,16 @@ export default function TestimonialCarousel() {
                   </div>
 
                   <div className="mb-4">
-                    <div className="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mb-2">
-                      <img
-                        src={`/api/placeholder/100/100`}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-16 h-16 rounded-full bg-purple-100 overflow-hidden mb-2 flex items-center justify-center">
+                      {testimonial.profileImage ? (
+                        <img
+                          src={testimonial.profileImage}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <User size={32} className="text-purple-500" />
+                      )}
                     </div>
                     <h3 className="font-medium text-base">
                       {testimonial.name}
@@ -324,13 +352,20 @@ export default function TestimonialCarousel() {
                     </div>
                   </div>
 
-                  <div className="mt-auto">
-                    <img
-                      src={testimonial.companyLogo}
-                      alt={`${testimonial.company} logo`}
-                      className="h-6"
-                    />
-                  </div>
+                  {/* <div className="mt-auto">
+                    {testimonial. ? (
+                      <img
+                        src={testimonial.companyLogo}
+                        alt={`${testimonial.company} logo`}
+                        className="h-6"
+                      />
+                    ) : (
+                      <div className="flex items-center gap-1 text-gray-700">
+                        <Building size={16} />
+                        <span>{testimonial.company}</span>
+                      </div>
+                    )}
+                  </div> */}
                 </div>
               ))}
           </div>
@@ -347,12 +382,16 @@ export default function TestimonialCarousel() {
                 </div>
 
                 <div className="mb-4">
-                  <div className="w-16 h-16 rounded-full bg-gray-200 overflow-hidden mb-2">
-                    <img
-                      src={`https://www.fotor.com/features/random-image-generator/`}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-16 h-16 rounded-full bg-purple-100 overflow-hidden mb-2 flex items-center justify-center">
+                    {testimonial.profileImage ? (
+                      <img
+                        src={testimonial.profileImage}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <User size={32} className="text-purple-500" />
+                    )}
                   </div>
                   <h3 className="font-medium text-base">{testimonial.name}</h3>
                   <p className="text-xs text-gray-600">{testimonial.title}</p>
@@ -362,11 +401,18 @@ export default function TestimonialCarousel() {
                 </div>
 
                 <div className="mt-auto">
-                  <img
-                    src={testimonial.companyLogo}
-                    alt={`${testimonial.company} logo`}
-                    className="h-6"
-                  />
+                  {testimonial.companyLogo ? (
+                    <img
+                      src={testimonial.companyLogo}
+                      alt={`${testimonial.company} logo`}
+                      className="h-6"
+                    />
+                  ) : (
+                    <div className="flex items-center gap-1 text-gray-700">
+                      <Building size={16} />
+                      <span>{testimonial.company}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -398,7 +444,9 @@ export default function TestimonialCarousel() {
             >
               <ChevronLeft
                 size={20}
-                className={isTransitioning ? "opacity-50" : "opacity-100"}
+                className={
+                  isTransitioning ? "opacity-50" : "opacity-100 text-white"
+                }
               />
             </button>
             <button
@@ -412,7 +460,9 @@ export default function TestimonialCarousel() {
             >
               <ChevronRight
                 size={20}
-                className={isTransitioning ? "opacity-50" : "opacity-100"}
+                className={
+                  isTransitioning ? "opacity-50" : "opacity-100 text-white"
+                }
               />
             </button>
           </div>

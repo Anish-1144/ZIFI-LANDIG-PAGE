@@ -56,7 +56,7 @@ export default function Scroll() {
         <section className="section w-screen h-screen flex-shrink-0 bg-black flex flex-col md:flex-row items-center justify-center gap-12 p-8 rounded-2xl snap-center">
           <div className="bg-white text-black p-10 rounded-lg max-w-lg">
             <img
-              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746424088/call-ai4_osmgiw.svg"
+              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746615920/Clip_path_group_lsdo8j.svg"
               alt=""
             />
           </div>
@@ -90,7 +90,7 @@ export default function Scroll() {
               </li>
             </ul>
             <div className="mt-8 ml-12">
-              <div className="h-12 w-12 border-t-2 border-l-2 border-blue-500 rounded-tl-full"></div>
+              <div className="h-12 w-12 border-t-2 border-l-2 border-white rounded-tl-full"></div>
             </div>
           </div>
         </section>
@@ -126,7 +126,7 @@ export default function Scroll() {
               </li>
             </ul>
             <div className="mt-8 ml-12">
-              <div className="h-12 w-12 border-t-2 border-l-2 border-blue-500 rounded-tl-full"></div>
+              <div className="h-12 w-12 border-t-2 border-l-2 border-white rounded-tl-full"></div>
             </div>
           </div>
           <div className="bg-white text-black p-10 rounded-lg max-w-lg">
@@ -141,7 +141,7 @@ export default function Scroll() {
         <section className="section w-screen h-screen flex-shrink-0 bg-black flex flex-col md:flex-row items-center justify-center gap-12 p-8 rounded-2xl snap-center">
           <div className="bg-white text-black p-10 rounded-lg max-w-lg">
             <img
-              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746424088/call-ai4_osmgiw.svg"
+              src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746614065/0998_wb4a5e.png"
               alt=""
             />
           </div>
@@ -173,7 +173,7 @@ export default function Scroll() {
               </li>
             </ul>
             <div className="mt-8 ml-12">
-              <div className="h-12 w-12 border-t-2 border-l-2 border-blue-500 rounded-tl-full"></div>
+              <div className="h-12 w-12 border-t-2 border-l-2 border-white rounded-tl-full"></div>
             </div>
           </div>
         </section>

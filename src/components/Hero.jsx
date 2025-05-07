@@ -85,7 +85,7 @@ const Hero = () => {
         <div className="absolute w-[600px] h-[600px] -bottom-[300px] -left-[200px] rounded-full bg-gradient-to-r from-purple-900/20 to-blue-700/5 blur-xl"></div>
       </div> */}
 
-      <div className="content-container relative z-10 container mx-auto px-6 text-center">
+      <div className="content-container relative z-0 container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-thin mb-6 tracking-tight text-white drop-shadow-lg">
           All-in-One AI-Powered Prospecting & <br />
           Outreach Platform

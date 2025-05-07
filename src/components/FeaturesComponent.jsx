@@ -1,6 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Image,
+  PenTool,
+  Calendar,
+  BarChart2,
+  Hash,
+  ShoppingBag,
+  Link,
+  Users,
+} from "lucide-react";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -8,42 +18,42 @@ gsap.registerPlugin(ScrollTrigger);
 const FeaturesComponent = () => {
   const features = [
     {
-      icon: "🖼️",
+      icon: <Image size={28} />,
       title: "Graphics",
       description: "Awesome templates for your images.",
     },
     {
-      icon: "✍️",
+      icon: <PenTool size={28} />,
       title: "AI Copywriting",
       description: "Generated marketing text, powered by AI.",
     },
     {
-      icon: "📅",
+      icon: <Calendar size={28} />,
       title: "Scheduling",
       description: "Automatic on all socials.",
     },
     {
-      icon: "📊",
+      icon: <BarChart2 size={28} />,
       title: "Analytics",
       description: "Real-time metrics on performance.",
     },
     {
-      icon: "🏷️",
+      icon: <Hash size={28} />,
       title: "Hashtags",
       description: "Relevant & trending, freshly updated.",
     },
     {
-      icon: "🛒",
+      icon: <ShoppingBag size={28} />,
       title: "Ecommerce",
       description: "Announce about new products.",
     },
     {
-      icon: "🔗",
+      icon: <Link size={28} />,
       title: "Link Shortener",
       description: "Save space on long links in captions.",
     },
     {
-      icon: "🤝",
+      icon: <Users size={28} />,
       title: "Collaboration",
       description: "Create workspaces for members.",
     },
@@ -51,136 +61,122 @@ const FeaturesComponent = () => {
 
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
-  const headingsRef = useRef([]);
   const iconsRef = useRef([]);
+  const headingsRef = useRef([]);
   const textsRef = useRef([]);
 
   useEffect(() => {
-    // Ensure all refs arrays are properly initialized
+    // Filter out null refs
     cardsRef.current = cardsRef.current.filter((item) => item !== null);
     iconsRef.current = iconsRef.current.filter((item) => item !== null);
     headingsRef.current = headingsRef.current.filter((item) => item !== null);
     textsRef.current = textsRef.current.filter((item) => item !== null);
 
-    // Initial setup - with safer animation setup
-    gsap.set(cardsRef.current, { autoAlpha: 0, scale: 0.8 });
-
-    // Make sure we're properly setting each icon individually
-    iconsRef.current.forEach((icon) => {
-      if (icon) gsap.set(icon, { autoAlpha: 0, scale: 0, rotate: -15 });
-    });
-
-    gsap.set(headingsRef.current, { autoAlpha: 0, y: 20 });
+    // Initial setup with faster animation timing
+    gsap.set(cardsRef.current, { autoAlpha: 0, y: 15 });
+    gsap.set(iconsRef.current, { autoAlpha: 0, y: 10 });
+    gsap.set(headingsRef.current, { autoAlpha: 0, y: 10 });
     gsap.set(textsRef.current, { autoAlpha: 0 });
 
-    // Create a master timeline that will be controlled by ScrollTrigger
+    // Create a master timeline with optimized settings
     const masterTl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%", // Animation starts when top of container is 80% from top of viewport
-        end: "top 30%", // Animation completes when top of container is 30% from top of viewport
-        toggleActions: "play none none none", // play, pause, resume, reverse, restart, reset, complete, none
-        // markers: true, // Uncomment for debugging
+        start: "top 80%",
+        end: "top 50%",
+        toggleActions: "play none none none",
       },
     });
 
-    // Container animation - subtle scale
+    // Faster container animation
     masterTl.from(containerRef.current, {
-      duration: 1.2,
-      scale: 0.95,
+      duration: 0.5,
       autoAlpha: 0,
-      ease: "power3.out",
+      ease: "power2.out",
     });
 
-    // Cards staggered arrival
+    // Optimized card animations with faster timing
     masterTl.to(
       cardsRef.current,
       {
-        duration: 0.8,
-        autoAlpha: 1,
-        scale: 1,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-      },
-      "-=0.8"
-    );
-
-    // Icons animation with bounce - modified to ensure all icons are included
-    iconsRef.current.forEach((icon, idx) => {
-      masterTl.to(
-        icon,
-        {
-          duration: 0.6,
-          autoAlpha: 1,
-          scale: 1,
-          rotate: 0,
-          ease: "elastic.out(1, 0.3)",
-        },
-        `-=${idx > 0 ? 0.4 : 0}`
-      );
-    });
-
-    // Headings fade in and move up
-    masterTl.to(
-      headingsRef.current,
-      {
-        duration: 0.5,
+        duration: 0.4,
         autoAlpha: 1,
         y: 0,
-        stagger: 0.08,
+        stagger: 0.05, // Reduced stagger time
         ease: "power2.out",
       },
       "-=0.3"
     );
 
-    // Description text fade in
+    // Icons animation - simpler and faster
     masterTl.to(
-      textsRef.current,
+      iconsRef.current,
       {
-        duration: 0.5,
+        duration: 0.3,
         autoAlpha: 1,
-        stagger: 0.08,
-        ease: "power1.inOut",
+        y: 0,
+        stagger: 0.03,
+        ease: "power2.out",
       },
       "-=0.2"
     );
 
-    // Setup individual scroll triggers for each card for an even more dynamic effect
-    cardsRef.current.forEach((card, index) => {
-      if (!card) return; // Skip if card isn't properly defined
+    // Faster headings animation
+    masterTl.to(
+      headingsRef.current,
+      {
+        duration: 0.3,
+        autoAlpha: 1,
+        y: 0,
+        stagger: 0.03,
+        ease: "power2.out",
+      },
+      "-=0.1"
+    );
 
-      // Create a hover animation context for each card
+    // Faster text animation
+    masterTl.to(
+      textsRef.current,
+      {
+        duration: 0.2,
+        autoAlpha: 1,
+        stagger: 0.02,
+        ease: "power1.out",
+      },
+      "-=0.1"
+    );
+
+    // Quick hover animations
+    cardsRef.current.forEach((card, index) => {
+      if (!card) return;
+
       const hoverTl = gsap.timeline({ paused: true });
 
       hoverTl.to(card, {
-        duration: 0.3,
-        y: -10,
-        scale: 1.05,
+        duration: 0.2,
+        y: -5, // Reduced movement
+        scale: 1.02, // Subtler scale
         boxShadow:
-          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+          "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
         ease: "power2.out",
       });
 
-      // Make sure the icon exists before trying to animate it
       if (iconsRef.current[index]) {
         hoverTl.to(
           iconsRef.current[index],
           {
-            duration: 0.4,
-            scale: 1.2,
-            rotate: 5,
-            ease: "elastic.out(1, 0.3)",
+            duration: 0.2,
+            scale: 1.1,
+            ease: "power2.out",
           },
-          "-=0.3"
+          "-=0.2"
         );
       }
 
-      // Set up hover animation triggers
       card.addEventListener("mouseenter", () => hoverTl.play());
       card.addEventListener("mouseleave", () => hoverTl.reverse());
     });
 
-    // Clean up ScrollTrigger instances when component unmounts
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -190,38 +186,35 @@ const FeaturesComponent = () => {
     <div className="bg-black min-h-screen flex items-center justify-center p-8">
       <div
         ref={containerRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl"
       >
         {features.map((feature, index) => (
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="relative flex flex-col items-center text-center p-6 bg-black rounded-lg shadow-lg text-white cursor-pointer transition-all duration-300 border-2 border-purple-500 hover:bg-purple-500 hover:text-white"
+            className="relative flex flex-col items-center text-center p-6 bg-black rounded-lg shadow-lg text-white cursor-pointer transition-all duration-200 border border-purple-500 hover:bg-purple-900 hover:text-white"
           >
             <div
               ref={(el) => (iconsRef.current[index] = el)}
-              className="text-4xl mb-4 icon"
-              style={{ display: "block" }} // Ensure icon is displayed
+              className="text-purple-400 mb-4 icon"
             >
               {feature.icon}
             </div>
             <h3
               ref={(el) => (headingsRef.current[index] = el)}
-              className="text-xl font-semibold mb-2"
+              className="text-lg font-semibold mb-2"
             >
               {feature.title}
             </h3>
-            <p ref={(el) => (textsRef.current[index] = el)} className="text-sm">
+            <p
+              ref={(el) => (textsRef.current[index] = el)}
+              className="text-sm text-gray-300"
+            >
               {feature.description}
             </p>
-            {index === 1 && (
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"></div>
-            )}
           </div>
         ))}
       </div>
-
-      
     </div>
   );
 };

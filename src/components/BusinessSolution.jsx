@@ -1,15 +1,25 @@
 import React, { useState } from "react";
+import {
+  Users,
+  Info,
+  ClipboardList,
+  DollarSign,
+  ArrowUpRight,
+  Clock,
+  ChevronDown,
+} from "lucide-react";
 
-const FeatureCard = ({ title, description }) => (
+const FeatureCard = ({ title, description, icon: Icon }) => (
   <div className="bg-white bg-opacity-10 p-6 rounded-lg flex items-start space-x-4 border-2 border-transparent hover:border-purple-500 transition duration-300 ease-in-out transform hover:scale-105">
-    <div className="w-12 h-12 bg-gray-700 rounded-lg flex-shrink-0"></div>
+    <div className="w-12 h-12 bg-gray-700 rounded-lg flex-shrink-0 flex items-center justify-center">
+      <Icon size={24} className="text-purple-400" />
+    </div>
     <div>
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="text-sm text-gray-400">{description}</p>
     </div>
   </div>
 );
-
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,21 +30,12 @@ const FAQItem = ({ question, answer }) => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{question}</span>
-        <svg
+        <ChevronDown
           className={`w-5 h-5 transform transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+          size={20}
+        />
       </button>
       {isOpen && <p className="pb-4 text-gray-400">{answer}</p>}
     </div>
@@ -47,31 +48,37 @@ const BusinessSolution = () => {
       title: "Get new leads",
       description:
         "Lead generation through personalized recommendations and proactive engagement",
+      icon: Users,
     },
     {
       title: "Inform your customers",
       description:
         "Keep your customers informed about products, services, policies, and company",
+      icon: Info,
     },
     {
       title: "Launch surveys",
       description:
         "Conduct surveys to gather customer feedback, improving products and services",
+      icon: ClipboardList,
     },
     {
       title: "Decrease support costs",
       description:
         "Automating repetitive tasks and streamlining operations to save time for human agents",
+      icon: DollarSign,
     },
     {
       title: "Boost conversions",
       description:
         "Provide personalized, efficient customer service with offers and recommendations",
+      icon: ArrowUpRight,
     },
     {
       title: "Provide round-the-clock support",
       description:
         "24/7 support to handle customer queries, boosting satisfaction and loyalty",
+      icon: Clock,
     },
   ];
 
@@ -79,7 +86,7 @@ const BusinessSolution = () => {
     {
       question: "Are VPN providers secure?",
       answer:
-        "Some VPN providers may log your internet activity or have vulnerable security systems. When choosing a provider, it’s important to pay attention to privacy, encryption levels, and more.",
+        "Some VPN providers may log your internet activity or have vulnerable security systems. When choosing a provider, it's important to pay attention to privacy, encryption levels, and more.",
     },
     {
       question: "How does ArgusVPN work?",
@@ -104,17 +111,18 @@ const BusinessSolution = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white p-8  ">
-      <h1 className="text-5xl font-thin text-center mb-12 text-purple-400 mt-20 ">
+    <div className="min-h-screen bg-black text-white p-8">
+      <h1 className="text-5xl font-thin text-center mb-12 text-purple-400 mt-20">
         The best solution for your business needs
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mx-auto max-w-3xl ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mx-auto max-w-3xl">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
             title={feature.title}
             description={feature.description}
+            icon={feature.icon}
           />
         ))}
       </div>

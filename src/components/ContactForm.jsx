@@ -26,15 +26,14 @@ export default function ContactForm() {
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
       <div className="w-full max-w-4xl">
         <div className="flex justify-between items-center mb-8">
-          <div className="text-sm font-medium">Get Started</div>
-          
+          <div className="text-3xl  underline font-medium">Get Started</div>
         </div>
 
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">
+          <h1 className="text-4xl md:text-5xl font-thin mb-2">
             Get in touch with us.
           </h1>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <h2 className="text-4xl md:text-5xl font-then">
             We're here to assist you.
           </h2>
         </div>
@@ -109,9 +108,10 @@ export default function ContactForm() {
 
         {/* Dots/circles shown on the right side */}
         <div className="hidden md:flex flex-col gap-4 absolute right-12 top-1/3">
-          <div className="w-4 h-4 rounded-full border border-gray-400"></div>
-          <div className="w-4 h-4 rounded-full border border-gray-400"></div>
-          <div className="w-4 h-4 rounded-full border border-gray-400"></div>
+          <div className="w-4 h-4 rounded-full  bg-purple-600"></div>
+          <div className="w-4 h-4 rounded-full  bg-purple-600 "></div>
+          <div className="w-4 h-4 rounded-full  bg-purple-600 "></div>
+          <div className="w-4 h-4 rounded-full  bg-purple-600"></div>
         </div>
       </div>
     </div>

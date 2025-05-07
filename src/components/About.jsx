@@ -5,10 +5,18 @@ export default function ZifyBotHero() {
   const [isHovered, setIsHovered] = useState(null);
 
   const features = [
-    { title: "Smart Cold Calling", id: "cold-calling" },
-    { title: "LinkedIn outreach", id: "linkedin" },
-    { title: "AI-email marketing", id: "email" },
-    { title: "AI-automated social media", id: "social" },
+    {
+      title: "Smart Cold Calling",
+      id: "cold-calling",
+      link: "/calling-agent",
+    },
+    
+    { title: "AI-email marketing", id: "email", link: "/email" },
+    {
+      title: "AI-automated social media",
+      id: "social",
+      link: "/features/social",
+    },
   ];
 
   return (
@@ -26,7 +34,8 @@ export default function ZifyBotHero() {
 
         <div className="space-y-6 mb-12">
           {features.map((feature) => (
-            <div
+            <a
+              href={feature.link}
               key={feature.id}
               className="flex items-center justify-between border-b border-gray-700 pb-4 cursor-pointer group"
               onMouseEnter={() => setIsHovered(feature.id)}
@@ -39,7 +48,7 @@ export default function ZifyBotHero() {
                 }`}
                 size={20}
               />
-            </div>
+            </a>
           ))}
         </div>
 

@@ -31,7 +31,7 @@ function CallingAgent() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
 
-        <div className="content-container relative z-10 container mx-auto px-6 text-center">
+        <div className="content-container relative  container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-6xl font-thin mb-6 tracking-tight text-white drop-shadow-lg">
             Next-Gen AI Voice Agent for Smart, Human-Like Conversations Time{" "}
             <br className="text-4xl" />
@@ -64,6 +64,8 @@ function CallingAgent() {
           src="https://res.cloudinary.com/dfcbjgt3w/image/upload/v1746445325/rt-12_pkwohe.svg"
           alt="Graphic"
         />
+        
+
         <button className="absolute z-10 mt-20  bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-600">
           Contact Us
         </button>

@@ -16,11 +16,11 @@ export default function CallAIComponent() {
   const containerRef = useRef(null);
 
   const logoImages = [
-    { text: "Logoipsum", style: "font-bold text-gray-400" },
-    { text: "logo", style: "font-bold text-gray-400" },
-    { text: "LOQO", style: "font-bold text-gray-400" },
-    { text: "IPSUM", style: "font-bold text-gray-400" },
-    { text: "Logoipsum", style: "font-bold text-gray-400" },
+    { text: "Apollo.ai", style: "font-bold text-gray-400" },
+    { text: "Close.io", style: "font-bold text-gray-400" },
+    { text: "Five9", style: "font-bold text-gray-400" },
+    { text: "Seamless.ai", style: "font-bold text-gray-400" },
+    { text: "Clay.run", style: "font-bold text-gray-400" },
   ];
 
   const peopleImages = [
@@ -284,6 +284,7 @@ export default function CallAIComponent() {
             alt=""
           />
         </div>
+       
       </div>
     </div>
   );
